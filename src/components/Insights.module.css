@@ -1,0 +1,180 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+
+/* KPI Grid */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1000px) { .kpiGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:  580px) { .kpiGrid { grid-template-columns: 1fr; } }
+
+.kpiCard {
+  background: var(--ink-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-mid), border-color var(--dur-mid);
+}
+
+.kpiCard:hover { transform: translateY(-2px); border-color: var(--border-2); }
+
+.kpiTop {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 12px;
+}
+
+.kpiTag {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 9px; border-radius: 99px;
+  display: inline-block;
+}
+
+.kpiEmoji { font-size: 22px; line-height: 1; }
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.kpiSub {
+  font-size: 11.5px; color: var(--text-3);
+  font-weight: 500; margin-bottom: 8px;
+}
+
+.kpiDesc {
+  font-size: 12.5px; color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* Charts Row */
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) { .chartsRow { grid-template-columns: 1fr; } }
+
+.chartCard {
+  background: var(--ink-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+
+.chartCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 10%, var(--gold-dim) 50%, transparent 90%);
+}
+
+.chartTitle {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--text);
+}
+
+.chartSub {
+  font-size: 12px; color: var(--text-3);
+  margin-top: 3px; margin-bottom: 18px;
+}
+
+/* Category table */
+.catTable {
+  background: var(--ink-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.catTableHeader { padding: 22px 24px 0; }
+
+.catTableBody { padding: 16px 24px 20px; }
+
+.catRow {
+  display: grid;
+  grid-template-columns: 30px 36px 1fr 200px 52px 90px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.catRow:last-child { border-bottom: none; }
+
+@media (max-width: 700px) {
+  .catRow { grid-template-columns: 30px 36px 1fr 80px; }
+  .catBarWrap, .catPct { display: none; }
+}
+
+.catRank {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-4);
+  text-align: center;
+}
+
+.catIcon {
+  width: 32px; height: 32px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+
+.catName { font-size: 13.5px; font-weight: 500; color: var(--text); }
+
+.catBarWrap {
+  height: 6px; background: var(--ink-5);
+  border-radius: 99px; overflow: hidden;
+}
+
+.catBarFill { height: 100%; border-radius: 99px; }
+
+.catPct {
+  font-size: 12px; font-weight: 700;
+  text-align: right; font-family: var(--font-mono);
+}
+
+.catAmt {
+  font-size: 13px; font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text); text-align: right;
+}
+
+/* Tooltip */
+.tooltip {
+  background: var(--ink-3);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-card);
+  min-width: 160px;
+}
+
+.ttLabel {
+  font-size: 11px; color: var(--text-3);
+  margin-bottom: 8px; letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ttRow {
+  display: flex; justify-content: space-between;
+  gap: 16px; font-size: 12.5px; margin-bottom: 4px;
+  font-family: var(--font-mono); color: var(--text);
+}
+
+.ttRow:last-child { margin-bottom: 0; }
+
+.empty {
+  padding: 40px 0; text-align: center;
+  color: var(--text-3); font-size: 13px;
+}
