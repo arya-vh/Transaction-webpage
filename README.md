@@ -2,7 +2,7 @@
 
 A modern, responsive React application for managing and analyzing financial transactions with an AI-powered chatbot assistant.
 
-![Transaction Site Preview](https://via.placeholder.com/800x400/007bff/ffffff?text=Transaction+Site+Preview)
+
 
 ## ✨ Features
 
